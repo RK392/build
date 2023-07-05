@@ -627,7 +627,20 @@ install_rclocal() {
 		#
 		# By default this script does nothing.
 
+		/boot/scripts/btt_init.sh
+
 		exit 0
 	EOF
 	chmod +x "${SDCARD}"/etc/rc.local
+}
+
+install_btt_scripts()
+{
+	/mkdir "${SDCARD}"/boot/gcode -p
+
+	/cp $USERPATCHES_PATH/boot/system.cfg ${SDCARD}/boot/system.cfg
+	/chmod +x "${SDCARD}"/boot/system.cfg
+
+	/cp -r $USERPATCHES_PATH/boot/scripts/ ${SDCARD}/boot/
+	/chmod +x "${SDCARD}"/boot/scripts/*
 }
