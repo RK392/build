@@ -83,7 +83,7 @@ function install_distribution_specific() {
 	install_rclocal
 
 	# copy scripts to image
-	install_btt_scripts
+	# install_btt_scripts
 
 	# use list modules INITRAMFS
 	if [ -f "${SRC}"/config/modules/"${MODULES_INITRD}" ]; then
